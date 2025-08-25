@@ -185,3 +185,70 @@ print("\nResultados:")
 print(f"Média do 1º Semestre: {media_1_semestre}")
 print(f"Média do 2º Semestre: {media_2_semestre}")
 print(f"Média Final: {media_final}")
+# Nomes dos integrantes do grupo:
+# Aluno 1: [Insira o nome aqui]
+# Aluno 2: [Insira o nome aqui]
+
+# Função para validar entrada de notas
+def validar_nota(mensagem):
+    while True:
+        try:
+            nota = float(input(mensagem))
+            if 0 <= nota <= 10:
+                return nota
+            else:
+                print("Erro: A nota deve estar entre 0 e 10.")
+        except ValueError:
+            print("Erro: Por favor, insira um número válido.")
+
+# Função para calcular a média semestral
+def calcular_media_semestral():
+    print("\nInsira as notas do semestre:")
+    
+    # Coletando notas dos checkpoints
+    checkpoints = []
+    for i in range(3):
+        nota = validar_nota(f"Nota do Checkpoint {i + 1}: ")
+        checkpoints.append(nota)
+    
+    # Coletando notas dos sprints
+    sprints = []
+    for i in range(2):
+        nota = validar_nota(f"Nota do Sprint {i + 1}: ")
+        sprints.append(nota)
+    
+    # Coletando nota da Global Solution
+    global_solution = validar_nota("Nota da Global Solution: ")
+    
+    # Encontrar a menor nota dos checkpoints usando FOR
+    menor_checkpoint = checkpoints[0]
+    for nota in checkpoints:
+        if nota < menor_checkpoint:
+            menor_checkpoint = nota
+    
+    # Remove a menor nota dos checkpoints
+    checkpoints.remove(menor_checkpoint)
+    
+    # Calcula a média parcial (40%) e global solution (60%)
+    media_parcial = (sum(checkpoints) + sum(sprints)) * 0.4
+    media_global_solution = global_solution * 0.6
+    
+    # Calcula a média semestral
+    media_semestral = media_parcial + media_global_solution
+    return round(media_semestral, 1)
+
+# Coletando médias dos dois semestres
+print("Notas do 1º Semestre:")
+media_1_semestre = calcular_media_semestral()
+
+print("\nNotas do 2º Semestre:")
+media_2_semestre = calcular_media_semestral()
+
+# Calculando a média final
+media_final = round((media_1_semestre * 0.4) + (media_2_semestre * 0.6), 1)
+
+# Exibindo os resultados
+print("\nResultados:")
+print(f"Média do 1º Semestre: {media_1_semestre}")
+print(f"Média do 2º Semestre: {media_2_semestre}")
+print(f"Média Final: {media_final}")
