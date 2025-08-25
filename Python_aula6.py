@@ -70,4 +70,58 @@ compras.append(item)
 for i in compras:
 print(i) '''
 
+# ================================
+# Código unindo Aula 05, 06 e 07
+# ================================
+
+# Aula 05 -> Listas: criar, adicionar elementos com append(), calcular média, pesquisa :contentReference[oaicite:0]{index=0}
+notas = []  
+for i in range(5):  # Aula 06 -> for com range para repetição controlada :contentReference[oaicite:1]{index=1}
+    nota = float(input(f"Digite a nota {i+1}: "))
+    notas.append(nota)  # usando método append da Aula 05
+print("Notas digitadas:", notas)
+
+# Aula 05 -> cálculo da média usando lista
+media = sum(notas) / len(notas)
+print(f"Média das notas = {media:.2f}")
+
+# Aula 06 -> percorrer lista para encontrar maior e menor valor :contentReference[oaicite:2]{index=2}
+maior = notas[0]
+menor = notas[0]
+for n in notas:
+    if n > maior:
+        maior = n
+    if n < menor:
+        menor = n
+print(f"Maior nota = {maior}")
+print(f"Menor nota = {menor}")
+
+# Aula 07 -> Dicionário com nome:nota :contentReference[oaicite:3]{index=3}
+alunos = {
+    "Ana": 8.5,
+    "Bruno": 6.7,
+    "Carla": 9.2,
+    "Diego": 7.3,
+    "Eva": 8.0
+}
+print("\nDicionário de alunos:", alunos)
+
+# Aula 07 -> acessar valores por chave
+print("Nota da Carla:", alunos["Carla"])
+
+# Aula 07 -> calcular média das notas do dicionário
+media_alunos = sum(alunos.values()) / len(alunos)
+print(f"Média da turma = {media_alunos:.2f}")
+
+# Aula 07 -> Tupla para representar uma posição fixa (exemplo de empacotamento/desempacotamento)
+posicao = (10, 20)  # coordenada (x,y)
+x, y = posicao
+print(f"\nExemplo de tupla: posição X={x}, Y={y}")
+
+# Aula 06 -> usar for com range para imprimir números pares até 10 :contentReference[oaicite:4]{index=4}
+print("\nNúmeros pares até 10:")
+for i in range(0, 11, 2):
+    print(i, end=" ")
+
+print("\n\nPrograma finalizado com sucesso!")
 
