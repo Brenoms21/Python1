@@ -1,6 +1,6 @@
 # Integrantes do grupo: Breno Martins da Silva(563685)
 #Guilherme Gama Massela(563635)
-
+from sympy.codegen.ast import continue_
 
 
 def validar_nota(nota):
@@ -38,6 +38,7 @@ def calcular_media_semestre(notas):
 
 def main():
     disciplina = input("Digite o nome da disciplina: ")
+    nome = input("Digite o seu nome: ")
 
     notas = {'1º semestre': {}, '2º semestre': {}}
     for semestre in ["1º semestre", "2º semestre"]:
@@ -62,6 +63,7 @@ def main():
 
     # Solicita e valida a frequência
     while True:
+
         freq = input("Digite a frequência (em %): ")
         try:
             freq_valor = float(freq)
@@ -72,15 +74,25 @@ def main():
         except ValueError:
             print("Entrada inválida. Digite um número.")
 
+
+
+
     # Situação final (aprovado/reprovado)
     if freq_valor < 75 or media_final < 6:
         situacao = "Reprovado"
     else:
         situacao = "Aprovado"
 
+    if media_final >= 4 or media_final < 6:
+            situacao = "exame"
+
+
     print(f'\nDisciplina: {disciplina}')
+    print(f'\nNome: {nome}')
     print(f'Média final: {media_final:.1f}')
     print(f'Situação final: {situacao}')
+
+
 
 
 
