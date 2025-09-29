@@ -1,7 +1,9 @@
-# Integrantes do grupo: Nome1, Nome2
+# Integrantes do grupo: Breno Martins da Silva(563685)
+#Guilherme Gama Massela(563635)
+
+
 
 def validar_nota(nota):
-    """Valida se a nota está entre 0 e 10."""
     try:
         valor = float(nota)
         if 0 <= valor <= 10:
@@ -14,7 +16,6 @@ def validar_nota(nota):
         return None
 
 def obter_notas(avaliacoes):
-    """Solicita e valida as notas para as avaliações de um semestre."""
     notas = {}
     for chave in avaliacoes:
         while True:
@@ -80,6 +81,8 @@ def main():
     print(f'\nDisciplina: {disciplina}')
     print(f'Média final: {media_final:.1f}')
     print(f'Situação final: {situacao}')
+
+
 
 if __name__ == "__main__":
     main()
