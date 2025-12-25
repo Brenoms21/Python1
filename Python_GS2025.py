@@ -1,4 +1,4 @@
-# Vídeo: https://youtu.be/seu_link_aqui
+# Vídeo: https://youtu.be/XNun7PU-btk
 # Integrantes: Breno Silva (RM 563685), Leonardo Eiji (RM 562934), Henrique Augusto Cruz (RM 564586)
 
 # Dados simulados: [velocidade_kmh, direcao_graus, umidade_%]
